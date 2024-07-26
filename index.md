@@ -45,15 +45,28 @@ For your second milestone, explain what you've worked on since your previous mil
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 For your first milestone, describe what your project is and how you plan to build it. You can include:
-- i used two Components in my first milestone a raspberry pi and an lcd display to code the raspberry pi i had to install the thirty-two-bit raspberry pi os onto a micro sd card now that i had everything installed i could run a few commands the first one i ran was
-  ```
-  {
-    git clone https://github.com/MichMich/MagicMirror
-  }
-  ```
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
+i used two Components in my first milestone a raspberry pi and an lcd display to code the raspberry pi i had to install the thirty-two-bit raspberry pi os onto a micro sd card now that i had everything installed i could run a few commands the first one i ran was
+```
+git clone https://github.com/MichMich/MagicMirror
+```
+this command gets the file information from github, then i ran
+```
+cd MagicMirror/
+```
+this command compiles all the information from the first command into a file with that name, after that we need to install all of the information using the command below
+```
+npm run install-mm
+```
+After this, you have all this data on your Rasberry Pi you have to get it from the configuration file which contains all Magic Mirrors software code. That is done by entering
+```
+cp config/config.js.sample config/config.js
+```
+now we need to tell the computer to use all the information and do something with it in this case we are telling it to open up the magic mirror software by running the code
+```
+npm run start
+```
+now the magic mirror software boots up now because it is just the baseline it only shows the date, time, weather, and news. I hope to add more modules like a google assistant and spotify
+
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
