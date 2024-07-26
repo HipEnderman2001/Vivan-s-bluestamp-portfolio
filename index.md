@@ -1,5 +1,5 @@
 # Bluestamp Magic Mirror
-A smart mirror is an innovative device that integrates a reflective surface with a digital display, providing real-time information such as weather updates, news, and personal notifications while maintaining its traditional function. Equipped with sensors, cameras, and voice recognition, it offers interactive features, including fitness tracking and virtual try-on capabilities. I think that the hardesat part of making of this was getting the vnc connected because i had to install .
+A smart mirror is an innovative device that integrates a reflective surface with a digital display, providing real-time information such as weather updates, news, and personal notifications while maintaining its traditional function. I think that the hardesat part of making of this was getting the vnc connected because i had to install.
 
 ```HTML 
 <!--- This is an HTML comment in Markdown -->
@@ -45,7 +45,12 @@ For your second milestone, explain what you've worked on since your previous mil
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
+- i used two Components in my first milestone a raspberry pi and an lcd display to code the raspberry pi i had to install the thirty-two-bit raspberry pi os onto a micro sd card now that i had everything installed i could run a few commands the first one i ran was
+  ```
+  {
+    git clone https://github.com/MichMich/MagicMirror
+  }
+  ```
 - Technical progress you've made so far
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project
@@ -78,11 +83,5 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Raspberry Pi | Programming the mirror | $95.19 | <a href=" https://www.amazon.com/RasTech-Raspberry-Starter-Heatsink-Screwdriver/dp/B0C8LV6VNZ/ref=sr_1_4?crid=3506HY00MCGVM&dib=eyJ2IjoiMSJ9._zkM62vSQ8p7tNr88715LdMv_qHh72Je-tkF9PXEa3chDE53QT4aZu4AGAb4ihE61QY4ZD55nKF6Fp2Kfs8t7AbafM_JrlJFfHo9OB4eAVGqa0EB-7aoBQHPmhKHZ2MW8ny-Kd44bMVlVxPlTWVk5YHIN5P3uKVqrE5Dcal0rKkHny-O6Xyb5ux2AOU6OwVbkag_bqBX66RQNRrgBuz-0pS43mcx93IZTQA9R8NaJJypYU2HAycp-XicTFmyU60a01Nfm9iuyo6B9yA8ppN3OQQyJ-NQ9xyNPxfTLwkqtng.yAYpU6outhQcZmOZhN9Wb6yTw7A85CNUbXZguGInZNg&dib_tag=se&keywords=raspberry%2Bpi%2Bkit&qid=1718848547&s=electronics&sprefix=rasbperry%2Bpi%2Bkit%2Celectronics%2C83&sr=1-4&th=1"> Link </a> |
 | LCD Display | showing the information that we want it to | $41.35 | <a href=" https://www.amazon.com/Hosyond-Display-1024×600-Capacitive-Raspberry/dp/B09XKC53NH/ref=sr_1_3?crid=1KKB9WC62OIAD&keywords=raspberry%2Bpi%2Bips&qid=1685911698&s=electronics&sprefix=raspberry%2Bpi%2Bips%2B%2Celectronics%2C87&sr=1-3&th=1#customerReviews"> Link </a> |
 | Keyboard and mouse | If you want to type on the display without connecting it to the computer again | $19.99 | <a href=" https://www.amazon.com/gp/product/B07XDWCLYF/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"> Link </a> |
-
-# Other Resources/Examples
-One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
-- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
 
 To watch the BSE tutorial on how to create a portfolio, click here.
