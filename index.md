@@ -11,7 +11,6 @@ A smart mirror is an innovative device that integrates a reflective surface with
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ORGMPVJyOLk?si=q19fnz-xWn8Wa-4r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
 - I have got the google assistant working and spotify working this is basically what i will stick with this for now
 - I was very surpised at how much harder getting the modules to work was than just the baseline
 - I installed a bad module and it made my mirror not work so i had to delete the MagicMirror software and reinstall it, there were also multiple times when installing google assistant where i did not know what to do so i had to spend 10 to 15 minutes just to find a button.
@@ -165,27 +164,27 @@ if (typeof module !== "undefined") { module.exports = config; }
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/96U5nTjL_Ug?si=n02NEri9h8aJAPGn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-i used two Components in my first milestone a raspberry pi and an lcd display to code the raspberry pi i had to install the thirty-two-bit raspberry pi os onto a micro sd card now that i had everything installed i could run a few commands the first one i ran was
+I used two components in my first milestone a Raspberry Pi and an lcd display to code the Raspberry Pi I had to install the thirty-two-bit Raspberry Pi os onto a micro sd card now that I had everything installed I could run a few commands the first one I ran was:
 ```
 git clone https://github.com/MichMich/MagicMirror
 ```
-this command gets the file information from github, then i ran
+this command gets the file information from github, then I ran:
 ```
 cd MagicMirror/
 ```
-this command compiles all the information from the first command into a file with that name, after that we need to install all of the information using the command below
+this command compiles all the information from the first command into a file with that name, after that we need to install all of the information using the command below:
 ```
 npm run install-mm
 ```
-After this, you have all this data on your Rasberry Pi you have to get it from the configuration file which contains all Magic Mirrors software code. That is done by entering
+After this, you have all this data on your Rasberry Pi you have to get it from the configuration file which contains all Magic Mirrors software code. That is done by entering:
 ```
 cp config/config.js.sample config/config.js
 ```
-now we need to tell the computer to use all the information and do something with it in this case we are telling it to open up the magic mirror software by running the code
+now we need to tell the computer to use all the information and do something with it in this case we are telling it to open up the magic mirror software by running the code:
 ```
 npm run start
 ```
-now the magic mirror software boots up now because it is just the baseline it only shows the date, time, weather, and news. I hope to add more modules like a google assistant and spotify
+now the magic mirror software boots up now because it is just the baseline it only shows the date, time, weather, and news. I hope to add more modules like a google assistant and spotify:
 
 # Bill of Materials
 
