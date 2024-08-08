@@ -5,7 +5,7 @@ A smart mirror is an innovative device that integrates a reflective surface with
 |:--:|:--:|:--:|:--:|
 | Vivan B | Prospect Highschool | Aeronautical Engineering | Incoming Freshman
 
-![Headstone Image](logo.svg)
+![Headstone Image](WIN_20240808_10_54_54_Pro.jpg)
 
 # Second Milestone
 
