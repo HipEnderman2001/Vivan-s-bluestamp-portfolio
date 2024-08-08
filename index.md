@@ -1,25 +1,11 @@
 # Bluestamp Magic Mirror
-A smart mirror is an innovative device that integrates a reflective surface with a digital display, providing real-time information such as weather updates, news, and personal notifications while maintaining its traditional function. I think that the hardesat part of making of this was getting the vnc connected because i had to install.
+A smart mirror is an innovative device that integrates a reflective surface with a digital display, providing real-time information such as weather updates, and news. I think that the hardest part of making of this was getting the VNC connected because I had to install so many different apps.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Vivan B | Prospect Highschool | Aeronautical Engineering | Incoming Freshman
 
 ![Headstone Image](logo.svg)
-  
-# Final Milestone
-
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
-
-
 
 # Second Milestone
 
@@ -31,6 +17,150 @@ For your second milestone, explain what you've worked on since your previous mil
 - I installed a bad module and it made my mirror not work so i had to delete the MagicMirror software and reinstall it, there were also multiple times when installing google assistant where i did not know what to do so i had to spend 10 to 15 minutes just to find a button.
 - i just need to get the frame and the mirror film on the display to make it a mirror and then ill be done
 
+  The Code in the config.js file i used is right here
+  
+```
+ /* Config Sample
+ *
+ * For more information on how you can configure this file
+ * see https://docs.magicmirror.builders/configuration/introduction.html
+ * and https://docs.magicmirror.builders/modules/configuration.html
+ *
+ * You can use environment variables using a `config.js.template` file instead of `config.js`
+ * which will be converted to `config.js` while starting. For more information
+ * see https://docs.magicmirror.builders/configuration/introduction.html#enviromnent-variables
+ */
+let config = {
+	address: "localhost",	// Address to listen on, can be:
+							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
+							// - another specific IPv4/6 to listen on a specific interface
+							// - "0.0.0.0", "::" to listen on any interface
+							// Default, when address config is left out or empty, is "localhost"
+	port: 8080,
+	basePath: "/",	// The URL path where MagicMirrorÂ² is hosted. If you are using a Reverse proxy
+									// you must set the sub path here. basePath must end with a /
+	ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1"],	// Set [] to allow all IP addresses
+									// or add a specific IPv4 of 192.168.1.5 :
+									// ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:192.168.1.5"],
+									// or IPv4 range of 192.168.3.0 --> 192.168.3.15 use CIDR format :
+									// ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:192.168.3.0/28"],
+
+	useHttps: false,			// Support HTTPS or not, default "false" will use HTTP
+	httpsPrivateKey: "",	// HTTPS private key path, only require when useHttps is true
+	httpsCertificate: "",	// HTTPS Certificate path, only require when useHttps is true
+
+	language: "en",
+	locale: "en-US",
+	logLevel: ["INFO", "LOG", "WARN", "ERROR"], // Add "DEBUG" for even more logging
+	timeFormat: 24,
+	units: "metric",
+
+	modules: [
+		{
+			module: "alert",
+		},
+		{
+			module: "updatenotification",
+			position: "top_bar"
+		},
+		{
+			module: "clock",
+			position: "top_left"
+		},
+		{
+			module: "calendar",
+			header: "US Holidays",
+			position: "top_left",
+			config: {
+				calendars: [
+					{
+						fetchInterval: 7 * 24 * 60 * 60 * 1000,
+						symbol: "calendar-check",
+						url: "https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics"
+					}
+				]
+			}
+		},
+		{
+			module: "compliments",
+			position: "lower_third"
+		},
+		{
+			module: "weather",
+			position: "top_right",
+			config: {
+				weatherProvider: "openmeteo",
+				type: "current",
+				lat: 42.082981,
+				lon: -87.980461
+			}
+		},
+		{
+			module: "weather",
+			position: "top_right",
+			header: "Weather Forecast",
+			config: {
+				weatherProvider: "openmeteo",
+				type: "forecast",
+				lat: 42.082981,
+				lon: -87.980461
+			}
+		},
+		{
+			module: "newsfeed",
+			position: "bottom_bar",
+			config: {
+				feeds: [
+					{
+						title: "New York Times",
+						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+					}
+				],
+				showSourceTitle: true,
+				showPublishDate: true,
+				broadcastNewsFeeds: true,
+				broadcastNewsUpdates: true
+			 }
+		},              
+		{          
+		         module: "MMM-GoogleAssistant",
+		         configDeepMerge: true,
+		         lang: "en-Us",
+		         config: {
+		           assistantConfig: {
+		             latitude: 42.082981,
+		             longitude: -87.980461,
+			   },
+			   recipes: [
+			     "../../EXT-Spotify/recipe/EXT-Spotify.js",
+			   ],
+			 }
+		},        
+		{         
+			   module: "EXT-Detector",
+			   position: "top_left",
+			   configDeepMerge: true
+		},  	    
+		{	    
+		 	   module: 'EXT-Spotify',
+		 	   position: 'top_left',
+		 	   config: {
+		 	     updateInterval: 1000,
+		 	     idleInterval: 10000,
+		 	     useBottomBar: false,
+		 	     CLIENT_ID: "9bb1ae21a2804d2ca10c5d2efd8af7d6",
+		 	     CLIENT_SECRET: "37c20a9c65324cb5bd5aa73752827f41",
+		 	     mini: true,
+		 	     forceSCL: false,
+		 	     noCanvas: false
+		 	 }
+		},
+	]
+};
+
+/*************** DO NOT EDIT THE LINE BELOW ***************/
+if (typeof module !== "undefined") { module.exports = config; }
+```
 # First Milestone
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/96U5nTjL_Ug?si=n02NEri9h8aJAPGn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
